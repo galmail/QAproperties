@@ -1,0 +1,33 @@
+<template name="headlines">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{topic}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView class="headlines-view"}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each headlines}}
+          {{#ionItem}}
+            <h2>{{title}}</h2>
+            <p>{{askedAt}}</p>
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+
+      <button class="button icon-left ion-help-circled button-block button-positive button-ask-question" data-action="new-question">Ask a Question</button>
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

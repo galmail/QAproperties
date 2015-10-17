@@ -1,0 +1,17 @@
+<template name="appLayout">
+  {{#ionBody}}
+    {{#ionSideMenuContainer side="left"}}
+      {{#ionSideMenus}}
+        {{#ionSideMenu}}
+          {{> sidemenu}}
+        {{/ionSideMenu}}
+      {{/ionSideMenus}}
+      {{#ionSideMenuContent}}
+        {{> ionNavBar}}
+        {{#ionNavView}}
+          {{> yield}}
+        {{/ionNavView}}
+      {{/ionSideMenuContent}}
+    {{/ionSideMenuContainer}}
+  {{/ionBody}}
+</template>

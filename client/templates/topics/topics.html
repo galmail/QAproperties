@@ -1,0 +1,25 @@
+<template name="topics">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Topics</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each topics}}
+          {{#ionItem path='headlines' name=name}}
+            <h2>{{name}}</h2>
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

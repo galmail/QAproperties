@@ -1,0 +1,41 @@
+// post.scss
+
+.post-modal-view {
+
+
+	////// Feedback //////
+
+	.feedback {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+	}
+	.feedback-label {
+  	margin-right: 30px;
+  }
+  .feedback-thumbup {
+    margin-right: 20px;
+  	font-size: 26px;
+  	&.selected {
+  		color: blue;
+  	}
+  }
+  .feedback-thumbdown {
+    font-size: 26px;
+    &.selected {
+  		color: blue;
+  	}
+  }
+
+  .post-detail-comments {
+    position: relative;
+    .button-new-comment {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }
+
+
+
+}

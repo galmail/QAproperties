@@ -1,0 +1,20 @@
+<template name="search">
+  {{#ionModal focusFirstInput=true title="Search"}}
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+          <input type="text" placeholder="Search" value="{{searchQuery}}" autofocus>
+        </label>
+      </div>
+      
+      {{#each headlines}}
+        {{#ionItem}}
+          <h2>{{title}}</h2>
+          <p>{{askedAt}}</p>
+        {{/ionItem}}
+      {{/each}}
+
+    </div>
+  {{/ionModal}}
+</template>

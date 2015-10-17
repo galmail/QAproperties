@@ -1,0 +1,55 @@
+<template name="post">
+  {{#ionModal customTemplate=true class="post-modal-view"}}
+    {{#with post}}
+    	<div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Close</button>
+        <h2 class="title">My Post Title</h2>
+        
+		    <button class="button button-clear pull-right button-positive" data-action="share-post">
+		      {{> ionIcon icon='ios-upload-outline'}}
+		    </button>
+        <!-- <button data-action="share" class="button button-positive button-clear">Share</button> -->
+      </div>
+      <div class="content has-header overflow-scroll">
+      	<h2>{{title}}</h2>
+	      <div class="question">{{question}}</div>
+	      <div class="answer">{{answer}}</div>
+	      <div class="votes">
+	      	<span>UPVOTES: {{upVotes}}</span>
+	      	<span>DOWNVOTES: {{downVotes}}</span>
+	      </div>
+	    	<div class="feedback">
+	        <span class="feedback-label">Was it Useful?</span>	        
+        	<a class="feedback-btn {{upVoted}} feedback-thumbup button button-icon icon ion-thumbsup"></a>
+        	<a class="feedback-btn {{downVoted}} feedback-thumbdown button button-icon icon ion-thumbsdown"></a>
+	      </div>
+
+	      <hr>
+
+	      <div class="padding post-detail-comments">
+          <h5>{{numComments}} Comments</h5>
+          <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
+            {{>ionIcon icon="plus"}}
+          </button>
+        </div>
+
+        <div class="list">
+          {{#each comments}}
+            <div class="item item-text-wrap comment-item">
+					    {{#with author}}
+					      <a href="#" class="comment-item-author">
+					        {{> avatar user=this size="small" shape="circle"}}
+					        {{profile.first_name}}
+					      </a>
+					    {{/with}}
+					    <p>
+					      {{body}}
+					    </p>
+					  </div>
+          {{/each}}
+        </div>
+
+      </div>
+    {{/with}}
+  {{/ionModal}}
+</template>

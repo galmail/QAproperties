@@ -1,0 +1,35 @@
+<template name="notifications">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Notifications</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#if hasNotifications}}
+        {{#ionList}}
+          {{#each headlines}}
+            {{#ionItem}}
+              <h2>{{title}}</h2>
+              <p>Question: {{question}}</p>
+              <p>Asked At: {{askedAt}}</p>
+              <p>Asked By: {{askedBy}}</p>
+            {{/ionItem}}
+          {{/each}}
+        {{/ionList}}
+      {{else}}
+        <div class="empty-view">
+          {{> ionIcon icon="ios-bell"}}
+          You don't have notifications!
+        </div>
+      {{/if}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

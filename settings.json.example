@@ -1,0 +1,13 @@
+{
+	"qaproperties": {
+		"adminUsers": ["<USER_EMAIL>","<USER_EMAIL>"]
+	},
+	"facebook": {
+		"appId": "<APP_ID_HERE>",
+		"secret" : "<SECRET_HERE>"
+	},
+	"twitter": {
+		"consumerKey": "<APP_ID_HERE>",
+		"secret" : "<SECRET_HERE>"
+	}
+}

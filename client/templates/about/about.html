@@ -1,0 +1,20 @@
+<template name="about">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
+      {{> ionIcon icon='navicon'}}
+    </button>
+  {{/contentFor}}
+  
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">About</h1>
+  {{/contentFor}}
+  
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="about-view">
+        This is the About View
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+</template>

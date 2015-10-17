@@ -1,0 +1,74 @@
+##### Default Basic Meteor Packages #####
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+#jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+#autopublish             # Publish all data to the clients (for prototyping)
+#insecure                # Allow all DB writes from clients (for prototyping)
+
+###### Added Packages ######
+
+## Router and Collections ##
+
+iron:router
+reywood:publish-composite
+matb33:collection-hooks
+aldeed:collection2
+dburles:collection-helpers
+
+## Helper Libs ##
+
+fastclick
+aldeed:autoform
+momentjs:moment
+utilities:avatar
+anti:fake
+
+## Ionic ##
+
+meteoric:ionic
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:autoform-ionic
+
+## Accounts ##
+
+service-configuration
+accounts-twitter
+accounts-facebook
+
+## Others ##
+
+
+###### Old Packages ######
+
+#meteor-platform
+#service-configuration
+#accounts-meteor-developer
+#momentjs:moment
+#iron:router@1.0.0
+#zimme:iron-router-active
+#anti:fake
+#reywood:publish-composite
+#matb33:collection-hooks
+#aldeed:collection2
+#aldeed:autoform
+#mrt:underscore-string-latest
+#dburles:collection-helpers
+#bengott:avatar
+#meteoric:ionic-sass@0.3.0
+#meteoric:ionicons-sass@0.1.7
+#meteoric:ionic@0.1.19
+#meteoric:autoform-ionic
+#reactive-var
+#accounts-facebook
+#accounts-twitter

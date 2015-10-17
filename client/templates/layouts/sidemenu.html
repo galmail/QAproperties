@@ -1,0 +1,39 @@
+<template name="sidemenu">
+
+	<div id="sidemenu">
+
+		{{#with user}}
+	    <a class="profile-header" data-ion-menu-close="" href="/profile">
+	      {{> avatar user=this size="large" shape="circle"}}
+	      <h3>{{profile.first_name}}</h3>
+	    </a>
+	  {{else}}
+	    <div class="guest-user">
+	      <h3>*Guest*</h3>
+	      <div>Please log in</div>
+	    </div>
+	  {{/with}}
+
+	  <div class="list">
+	    <a class="item item-icon-left" data-ion-menu-close="" href="/topics">
+	      <i class="icon ion-ios-home"></i>Home
+	    </a>
+	    <a class="item item-icon-left" data-ion-menu-close="" href="/notifications">
+	      <i class="icon ion-ios-bell"></i>
+	      Notifications
+	      <span class="badge badge-assertive">{{numNotifications}}</span>
+	    </a>
+	    <a class="item item-icon-left" data-ion-menu-close="" href="/profile">
+	      <i class="icon ion-person"></i>Profile
+	    </a>
+	    <a class="item item-icon-left" data-ion-menu-close="" href="/recent">
+	      <i class="icon ion-aperture"></i>Recent
+	    </a>
+	    <a class="item item-icon-left" data-ion-menu-close="" href="/about">
+	      <i class="icon ion-iphone"></i>About the App
+	    </a>
+	  </div>
+
+  </div>
+
+</template>
