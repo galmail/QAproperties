@@ -3,7 +3,7 @@
 	<div id="sidemenu">
 
 		{{#with user}}
-	    <a class="profile-header" data-ion-menu-close="" href="/profile">
+	    <a class="profile-header" data-ion-menu-close="" href="#">
 	      {{> avatar user=this size="large" shape="circle"}}
 	      <h3>{{profile.first_name}}</h3>
 	    </a>
@@ -15,6 +15,9 @@
 	  {{/with}}
 
 	  <div class="list">
+	  	<a class="item item-icon-left" data-ion-menu-close="" href="/welcome">
+	      <i class="icon ion-flag"></i>Welcome
+	    </a>
 	    <a class="item item-icon-left" data-ion-menu-close="" href="/topics">
 	      <i class="icon ion-ios-home"></i>Home
 	    </a>
@@ -23,14 +26,17 @@
 	      Notifications
 	      <span class="badge badge-assertive">{{numNotifications}}</span>
 	    </a>
-	    <a class="item item-icon-left" data-ion-menu-close="" href="/profile">
+	    <!-- <a class="item item-icon-left" data-ion-menu-close="" href="/profile">
 	      <i class="icon ion-person"></i>Profile
-	    </a>
-	    <a class="item item-icon-left" data-ion-menu-close="" href="/recent">
+	    </a> -->
+	    <!-- <a class="item item-icon-left" data-ion-menu-close="" href="/recent">
 	      <i class="icon ion-aperture"></i>Recent
-	    </a>
+	    </a> -->
 	    <a class="item item-icon-left" data-ion-menu-close="" href="/about">
 	      <i class="icon ion-iphone"></i>About the App
+	    </a>
+	    <a class="item item-icon-left" data-ion-menu-close="" data-action="signout">
+	      <i class="icon ion-android-exit"></i>Logout
 	    </a>
 	  </div>
 

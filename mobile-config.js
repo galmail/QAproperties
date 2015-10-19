@@ -41,7 +41,6 @@ App.launchScreens({
 
 App.setPreference('StatusBarOverlaysWebView', true);
 App.setPreference('StatusBarStyle', 'default');
-//App.accessRule('*');
+App.accessRule('*');
 App.accessRule('fb://*');
 App.accessRule('tw://*');
-

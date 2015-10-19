@@ -25,8 +25,9 @@ Template.headlines.helpers({
 
 Template.headlines.events({
   'click .item': function (event, template) {
-    Session.set('postId',this._id);
-    IonModal.open('post');
+    //Session.set('postId',this._id);
+    //IonModal.open('post');
+    Router.go('/posts/'+this._id);
     return false;
   },
   'click [data-action="new-question"]': function(){

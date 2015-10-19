@@ -1,5 +1,21 @@
 Comments = new Mongo.Collection('comments');
 
+Comments.before.insert(function (userId, comment) {
+  if(Meteor.isServer){
+    var user = Meteor.users.findOne({_id: userId});
+    if(user.role!='admin'){
+      Meteor.call("notifyAdmin",comment.postId,true);
+    }
+    else {
+      var post = Posts.findOne({_id: comment.postId});
+      if(post.askedBy!=userId){
+        Meteor.call("notifyUser",post.askedBy,post._id,true);
+      }
+    }
+  }
+});
+
+
 Comments.helpers({
   author: function () {
     return Meteor.users.findOne({_id: this.userId});

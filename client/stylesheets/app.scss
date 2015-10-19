@@ -6,6 +6,24 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
 
+//////////////// Global Styles ////////////////
+
+.full-height {
+  height: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+//////////////// Old Styles ////////////////
+
+
 .product-title a {
   text-decoration: none;
   font-weight: bold;
@@ -32,36 +50,6 @@
     display: block;
     margin: 0 auto 12px auto;
     font-size: 60px;
-  }
-}
-
-.button.vote-button {
-  width: 30px;
-  max-width: 30px;
-  min-width: 30px;
-  padding: 20px 0 0 0;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-size: 12px;
-  border: 0;
-  border-radius: $border-radius-base;
-  line-height: 20px;
-
-  &.has-voted {
-    .icon {
-      color: $positive;
-    }
-  }
-
-  .icon {
-    height: 20px;
-    top: 4px;
-
-    &:before {
-      font-size: 20px;
-      line-height: 20px;
-    }
   }
 }
 

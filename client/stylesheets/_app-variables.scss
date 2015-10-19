@@ -1,3 +1,22 @@
 // Add Custom/Override Variables Here:
-$positive: #DE4F4F;
+
+
+$lev-light-blue: #3D97AF;
+$lev-light-green: #4C9885;
+$lev-dark-green: #337373;
+
+
+
+$positive:                        $lev-light-blue !default;
+
+
+// $light:                           #fff !default;
+// $stable:                          #f8f8f8 !default;
+// $calm:                            #43cee6 !default;
+// $balanced:                        #66cc33 !default;
+// $energized:                       #f0b840 !default;
+// $assertive:                       #ef4e3a !default;
+// $royal:                           #8a6de9 !default;
+// $dark:                            #444 !default;
+
 $loading-font-size: 22px;

@@ -25,17 +25,13 @@ meteor run ios-device --mobile-server qaproperties.meteor.com --settings private
 
 ## Pending Tasks
 
-- Native Push-Notifications
-- The Cartoon of the week Screen
 
-To Fix:
-
-- Add notifications when someone post a comment: notify admin and the person who asked the question and all the users who commented on the post.
-
+- Test Push Notifications Scenarios.
 - Finish the styles
 
 Extras:
 
+- The Cartoon of the week Screen
 - Latest News Screen
 - Google Analytics
 - Mix Panel Analytics

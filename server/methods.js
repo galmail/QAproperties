@@ -1,18 +1,44 @@
 Meteor.methods({
 
-  notifyAdmin: function(){
+  notifyAdmin: function(postId,isComment){
     console.log("inside notifyAdmin...");
-    var adminUsers = Meteor.users.find({"profile.email": {$in: Meteor.settings.qaproperties.adminUsers}});
+    var adminUsers = Meteor.users.find({role: 'admin'});
+    var msg = "Someone posted a question!";
+    if(isComment){
+      msg = "Someone sent a comment!";
+    }
     adminUsers.forEach(function(user){
-      //TODO send push notification to admin user
       console.log('sending push notification to admin userId: ' + user._id);
+      Push.send({
+        from: 'QAproperties',
+        title: 'New Message',
+        text: msg,
+        badge: Posts.getNotifications(user._id).count()+1,
+        query: {
+          userId: user._id
+        },
+        payload: {postId: postId}
+      });
     });
   },
 
-  notifyUser: function(userId){
+  notifyUser: function(userId,postId,isComment){
     var user = Meteor.users.findOne({_id: userId});
-    //TODO send push notification to user
     console.log('sending push notification to user with userId: ' + user._id);
+    var msg = "Someone answered your question!";
+    if(isComment){
+      msg = "Someone commented on your question!";
+    }
+    Push.send({
+      from: 'QAproperties',
+      title: 'New Message',
+      text: msg,
+      badge: Posts.getNotifications(user._id).count()+1,
+      query: {
+        userId: user._id
+      },
+      payload: {postId: postId}
+    });
   },
 
   toggleUpVote: function(postId,userId){
@@ -85,18 +111,6 @@ Meteor.methods({
 
   markPostAsRead: function(postId){
     Posts.update({_id: postId},{$set: {read: true}});
-  },
-
-  'Products.vote': function (_id) {
-    if (!Meteor.user()) {
-      return;
-    }
-
-    if (_(Meteor.user().profile.votedProductIds).include(_id)) {
-      return;
-    }
-
-    Products.update({_id: _id}, {$inc: {numberOfVotes: 1}, $addToSet: {voterIds: this.userId}});
-    Meteor.users.update({_id: this.userId}, {$addToSet: {'profile.votedProductIds': _id}});
   }
+
 });

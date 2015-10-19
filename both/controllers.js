@@ -10,6 +10,8 @@ AboutController = AppController.extend({});
 
 TopicsController = AppController.extend({});
 
+PostController = AppController.extend({});
+
 HeadlinesController = AppController.extend({});
 
 /////////// Old Controllers //////////

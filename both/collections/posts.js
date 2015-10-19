@@ -5,7 +5,7 @@ Posts.before.insert(function (userId, post) {
   post.askedBy = userId;
   post.upVotes = 0;
   post.downVotes = 0;
-  if(Meteor.isServer && !post.answer) Meteor.call("notifyAdmin");
+  if(Meteor.isServer && !post.answer) Meteor.call("notifyAdmin",post._id);
 });
 
 Posts.before.update(function (userId, post) {
@@ -13,7 +13,7 @@ Posts.before.update(function (userId, post) {
   if(!post.answer){
     post.answeredAt = new Date();
     post.answeredBy = userId;
-    if(Meteor.isServer) Meteor.call("notifyUser",post.askedBy);
+    if(Meteor.isServer) Meteor.call("notifyUser",post.askedBy,post._id);
   }
 });
 

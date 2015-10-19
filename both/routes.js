@@ -3,7 +3,12 @@
 // });
 
 Router.route('/', function () {
-  Router.go('topics');
+  if(!localStorage.getItem("firstTimeUser")){
+    Router.go('welcome');
+  }
+  else {
+    Router.go('topics');
+  }
 });
 
 Router.route('/welcome', {
@@ -21,6 +26,11 @@ Router.route('/topics', {
 Router.route('/headlines/:_id', {
   name: 'headlines'
 });
+
+Router.route('/posts/:_id', {
+  name: 'post'
+});
+
 
 Router.route('/notifications', {
   name: 'notifications'

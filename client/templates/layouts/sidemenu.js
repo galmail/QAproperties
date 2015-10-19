@@ -20,5 +20,29 @@ Template.sidemenu.helpers({
 });
 
 Template.sidemenu.events({
+
+  'click [data-action="signout"]': function(){
+    IonActionSheet.show({
+      titleText: 'Are you sure you wish to signout?',
+      buttons: [
+        { text: 'Sign Out' }
+      ],
+      cancelText: 'Cancel',
+      buttonClicked: function(index) {
+        if (index === 0) {
+          Meteor.logout(function(err){
+            if (err) {
+              throw new Meteor.Error("Logout failed");
+            }
+            else {
+              delete(localStorage.firstTimeUser);
+              Router.go('/');
+            }
+          });
+        }
+        return true;
+      }
+    });
+  }
   
 });

@@ -5,6 +5,7 @@ Template.topics.created = function () {
 };
 
 Template.topics.rendered = function () {
+  localStorage.setItem("firstTimeUser","no");
   this.autorun(function () {
     if (!this.subscription.ready()) {
       IonLoading.show();

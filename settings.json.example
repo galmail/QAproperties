@@ -1,7 +1,4 @@
 {
-	"qaproperties": {
-		"adminUsers": ["<USER_EMAIL>","<USER_EMAIL>"]
-	},
 	"facebook": {
 		"appId": "<APP_ID_HERE>",
 		"secret" : "<SECRET_HERE>"
@@ -9,5 +6,21 @@
 	"twitter": {
 		"consumerKey": "<APP_ID_HERE>",
 		"secret" : "<SECRET_HERE>"
+	},
+	"pushNotifications": {
+	  "apn": {
+	    "passphrase": "<PASSPHRASE>",  
+	    "key": "<PushKey.pem>",
+	    "cert": "<PushCert.pem>"
+	  },  
+	  "gcm": {
+	    "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+	    "projectNumber": "12345"
+	  },
+	  "production": false,
+	  "badge": true,
+	  "sound": true,
+	  "alert": true,
+	  "vibrate": true
 	}
 }

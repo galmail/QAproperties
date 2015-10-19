@@ -16,7 +16,7 @@ Template.answerQuestion.rendered = function () {
 
 Template.answerQuestion.helpers({
   currentPost: function(){
-    return Posts.findOne({_id: Session.get('postId')});
+    return Posts.findOne({_id: this.postId});
   }
 });
 

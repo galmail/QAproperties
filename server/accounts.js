@@ -16,9 +16,7 @@ Accounts.onCreateUser(function(options, user) {
   }
   // setting user role
   user.role = 'user';
-  if(Meteor.settings.qaproperties.adminUsers.indexOf(user.profile.email)>=0){
-    user.role = 'admin';
-  }
+  if(Meteor.users.find({}).count()==0) user.role = 'admin';
   user.upVotedPosts = [];
   user.downVotedPosts = [];
   return user;
