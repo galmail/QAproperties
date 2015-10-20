@@ -11,7 +11,7 @@ Meteor.startup(function() {
     },
     {
       name: 'Buy/Sell',
-      thumbnail: 'images/topics/buy_sell.png'
+      thumbnail: 'images/topics/buysell2.png'
     },
     {
       name: 'Tenant',
@@ -173,7 +173,8 @@ Meteor.startup(function() {
   ];
 
   ///////////// Inserting Stuff /////////////
-  
+
+
   //Topics.remove({});
   if (Topics.find({}).count() === 0) {
     _(topics).each(function (topic) {
