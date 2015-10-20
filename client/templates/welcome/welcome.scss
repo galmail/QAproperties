@@ -1,5 +1,96 @@
 // welcome.scss
+//
+$color-twitter: #4099ff;
+$color-facebook: #3B5998;
 
 .welcome-view {
-	
+    .background-image {
+        z-index: -111;
+        background: url(/images/home.jpg);
+        -webkit-filter: blur(5px);
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .content {
+        height: 100%;
+        color: white;
+        text-align: center;
+        position: relative;
+        height: 100vh;
+
+        .half-facebook {
+            width: 45%;
+            left: 10px;
+            margin: 0;
+            border-radius: 0;
+            background-color: $color-facebook;
+            border: none;
+            bottom: 200px;
+            position: absolute!important;
+        }
+
+        .half-twitter {
+            width: 45%;
+            right: 10px;
+            bottom: 200px;
+            margin: 0;
+            border-radius: 0;
+            background-color: $color-twitter;
+            border: none;
+            position: absolute!important;
+        }
+    }
+
+    .title {
+        font-size: 38px;
+        top: 220px;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .slogan {
+        font-size: 18px;
+        top: 255px;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .guest {
+        font-size: 18px;
+        color: lightgrey;
+        text-decoration: none;
+        &:visited {
+            text-decoration: none;
+            color: lightgrey;
+        }
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+        right: 0;
+    }
+
+    .terms {
+        font-size: 14px;
+        color: lightgrey;
+        text-decoration: none;
+        &:visited {
+            text-decoration: none;
+            color: lightgrey;
+        }
+        position: absolute;
+        bottom: 30px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
 }
