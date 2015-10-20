@@ -9,21 +9,21 @@ Meteor.startup(function () {
   	Push.addListener('message', function(notification) {
 			// Called on every message
 			console.log('received msg',notification);
-			//console.log(JSON.stringify(notification));
-			alert(notification.message, function(){
-				console.log("notification dismissed...");
-			}, notification.title, "Ok");
-
-			console.log("notification.payload",notification.payload);
 
 			// SCENARIO 1: someone ask a question, the admin gets a notification, when clicked, he can see the question (post) and answer it.
-			
 			// SCENARIO 2: the admin answer a question, the user gets a push notification, when clicked, he can see the answer (post)
 			
-			if(notification.payload && notification.payload.postId)
-				Router.go('/posts/' + notification.payload.postId);
+			if(notification.background){
+				// received notification in the background..
+				if(notification.payload && notification.payload.postId)
+					Router.go('/posts/' + notification.payload.postId);
+				else {
+					Router.go('/notifications');
+				}
+			}
 			else {
-				Router.go('/notifications');
+				// received notification in the foreground.. just alert the user.
+				alert('You have received a new message. Check out your notifications.');
 			}
 
 		});

@@ -6,6 +6,10 @@ Meteor.publish('topics', function() {
   return Topics.find();
 });
 
+Meteor.publish('viewTopic', function(topicId) {
+  return Topics.find({_id: topicId});
+});
+
 Meteor.publish('headlines', function(topicId) {
   return Posts.find(
   {

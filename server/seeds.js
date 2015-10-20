@@ -7,27 +7,27 @@ Meteor.startup(function() {
   var topics = [
     {
       name: 'Rent',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/rent.png'
     },
     {
       name: 'Buy/Sell',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/buy_sell.png'
     },
     {
       name: 'Tenant',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/tenants.png'
     },
     {
       name: 'Landlord',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/landlords.png'
     },
     {
       name: 'Investor',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/investors.png'
     },
     {
       name: 'Agent',
-      thumbnail: 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg'
+      thumbnail: 'images/topics/agents.png'
     }
   ];
 

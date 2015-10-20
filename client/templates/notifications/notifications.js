@@ -30,14 +30,6 @@ Template.notifications.helpers({
 Template.notifications.events({
   'click .item': function(){
     Router.go('/posts/'+this._id);
-    // Session.set('postId',this._id);
-    // if(Meteor.user().role=='admin'){
-    //   IonModal.open('answerQuestion');
-    // }
-    // else {
-    //   IonModal.open('post');
-    //   Meteor.call('markPostAsRead',this._id); // mark post as read
-    // }
   }
 });
 

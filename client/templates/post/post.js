@@ -75,7 +75,13 @@ Template.post.events({
     if (Meteor.user()) {
       newComment();
     } else {
-      IonModal.open('signIn',{callback: newComment});
+      IonModal.open('signIn',{callback: function(){
+        IonLoading.show();
+        Meteor.setTimeout(function(){
+          newComment();
+          IonLoading.hide();
+        },500);
+      }});
     }
     return false;
   },

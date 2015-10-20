@@ -1,0 +1,26 @@
+// topics.scss
+
+.topics-view {
+
+	.topic-row {
+		height: 33.3333%;
+	}
+
+	.topic {
+		display: block;
+		text-decoration: none;
+
+
+		color: darkgreen;
+    font-size: 1em;
+    font-weight: bold;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: .5em;
+    margin: 5px;
+    border: 1px solid lightblue;
+	}
+
+
+}

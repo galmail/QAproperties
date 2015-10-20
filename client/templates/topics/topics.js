@@ -18,13 +18,31 @@ Template.topics.rendered = function () {
 Template.topics.helpers({
   topics: function () {
     return Topics.find();
+  },
+  getTopicName: function (index) {
+    var res = '';
+    var topic = Topics.findOne({},{sort: {name: -1}, skip: parseInt(index)});
+    if(topic) res = topic.name;
+    return res;
+  },
+  getTopicThumbnail: function(index){
+    var res = '';
+    var topic = Topics.findOne({},{sort: {name: -1}, skip: parseInt(index)});
+    if(topic) res = topic.thumbnail;
+    return res;
+  },
+  getTopicId: function(index){
+    var res = '';
+    var topic = Topics.findOne({},{sort: {name: -1}, skip: parseInt(index)});
+    if(topic) res = topic._id;
+    return res;
   }
 });
 
 
 Template.topics.events({
-  'click .item': function (event, template) {
-    Session.set('topic',this.name);
-    return true;
-  }
+  // 'click .topic': function (event, template) {
+    
+  //   return true;
+  // }
 });

@@ -1,5 +1,7 @@
 <template name="topics">
 
+  <div class="topics-view">
+
   {{#contentFor "headerButtonLeft"}}
     <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
       {{> ionIcon icon='navicon'}}
@@ -12,6 +14,9 @@
 
   {{#ionView}}
     {{#ionContent}}
+      
+      <!--
+
       {{#ionList}}
         {{#each topics}}
           {{#ionItem path='headlines' name=name}}
@@ -19,7 +24,27 @@
           {{/ionItem}}
         {{/each}}
       {{/ionList}}
+
+      -->
+
+
+      <div class="row topic-row">
+        <a href="/headlines/{{getTopicId 0}}" class="col topic" style="background-image:url('{{getTopicThumbnail 0}}');">{{getTopicName 0}}</a>
+        <a href="/headlines/{{getTopicId 1}}" class="col topic" style="background-image:url('{{getTopicThumbnail 1}}');">{{getTopicName 1}}</a>
+      </div>
+      <div class="row topic-row">
+        <a href="/headlines/{{getTopicId 2}}" class="col topic" style="background-image:url('{{getTopicThumbnail 2}}');">{{getTopicName 2}}</a>
+        <a href="/headlines/{{getTopicId 3}}" class="col topic" style="background-image:url('{{getTopicThumbnail 3}}');">{{getTopicName 3}}</a>
+      </div>
+      <div class="row topic-row">
+        <a href="/headlines/{{getTopicId 4}}" class="col topic" style="background-image:url('{{getTopicThumbnail 4}}');">{{getTopicName 4}}</a>
+        <a href="/headlines/{{getTopicId 5}}" class="col topic" style="background-image:url('{{getTopicThumbnail 5}}');">{{getTopicName 5}}</a>
+      </div>
+
+
     {{/ionContent}}
   {{/ionView}}
+
+  </div>
 
 </template>

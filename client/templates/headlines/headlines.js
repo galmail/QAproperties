@@ -1,12 +1,13 @@
 Template.headlines.created = function () {
   this.autorun(function () {
-    this.subscription = Meteor.subscribe('headlines',Router.current().params._id);
+    this.headlinesSubscription = Meteor.subscribe('headlines',Router.current().params._id);
+    this.topicSubscription = Meteor.subscribe('viewTopic',Router.current().params._id);
   }.bind(this));
 };
 
 Template.headlines.rendered = function () {
   this.autorun(function () {
-    if (!this.subscription.ready()) {
+    if (!this.headlinesSubscription.ready() || !this.topicSubscription.ready()) {
       IonLoading.show();
     } else {
       IonLoading.hide();
@@ -16,7 +17,8 @@ Template.headlines.rendered = function () {
 
 Template.headlines.helpers({
   topic: function(){
-    return Session.get('topic');
+    var topic = Topics.findOne({_id: Router.current().params._id});
+    if(topic) return topic.name;
   },
   headlines: function () {
     return Posts.getHeadlines(Router.current().params._id);
@@ -25,8 +27,6 @@ Template.headlines.helpers({
 
 Template.headlines.events({
   'click .item': function (event, template) {
-    //Session.set('postId',this._id);
-    //IonModal.open('post');
     Router.go('/posts/'+this._id);
     return false;
   },
@@ -34,7 +34,13 @@ Template.headlines.events({
     if (Meteor.user()) {
       IonModal.open('newQuestion');
     } else {
-      IonModal.open('signIn');
+      IonModal.open('signIn',{callback: function(){
+        IonLoading.show();
+        Meteor.setTimeout(function(){
+          IonModal.open('newQuestion');
+          IonLoading.hide();
+        },500);
+      }});
     }
     return false;
   }
