@@ -1,11 +1,46 @@
 // headlines.scss
 
+.headlines-view,.search-modal {
+
+	.headline {
+  	display: block;
+  	color: #333333;
+  	text-decoration: none;
+  	margin: 0 .5em;
+    padding: .5em 0;
+    padding-top: .8em;
+    border: 0;
+    border-bottom: 1px solid black;
+    &:last-child {
+      margin-bottom: 46px;
+    }
+  }
+
+  .headline-title {
+    font-size: 22px;
+    line-height: 30px;
+    font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    white-space: normal;
+    margin: 0 5px;
+  }
+
+  .headline-asked-by {
+    display: block;
+    text-align: right;
+    font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 16px;
+    color: #aaaaaa;
+  }
+
+}
+
 .headlines-view {
 
-	.button-ask-question {
-		margin-left: 3px;
-    position: absolute;
-    bottom: 0;
+	.button.button-ask-question {
+		margin: 0;
 	}
 
 }

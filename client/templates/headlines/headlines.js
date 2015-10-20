@@ -26,10 +26,12 @@ Template.headlines.helpers({
 });
 
 Template.headlines.events({
-  'click .item': function (event, template) {
-    Router.go('/posts/'+this._id);
-    return false;
-  },
+  // 'click .item': function (event, template) {
+  //   window.debugme = event;
+  //   console.log(event.target.dataset.postId);
+  //   Router.go('/posts/'+this._id);
+  //   return false;
+  // },
   'click [data-action="new-question"]': function(){
     if (Meteor.user()) {
       IonModal.open('newQuestion');

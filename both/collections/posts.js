@@ -85,7 +85,16 @@ Posts.getHeadlines = function(topicId) {
 };
 
 
-Posts.helpers({});
+Posts.helpers({
+
+  path: function(){
+    return "/posts/" + this._id;
+  },
+  askedAt_TimeAgo: function(){
+    return moment(this.askedAt).fromNow();
+  }
+
+});
 
 Posts.attachSchema(new SimpleSchema({
   topicId: {
@@ -96,10 +105,12 @@ Posts.attachSchema(new SimpleSchema({
     }
   },
   title: {
-    type: String
+    type: String,
+    max: 140
   },
   question: {
-    type: String
+    type: String,
+    optional: true
   },
   answer: {
     type: String,

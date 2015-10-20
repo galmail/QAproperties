@@ -1,4 +1,5 @@
 <template name="headlines">
+  <div class="headlines-view">
 
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton class="button-positive" text=false}}
@@ -14,20 +15,29 @@
     </button>
   {{/contentFor}}
 
-  {{#ionView class="headlines-view"}}
+  {{#ionView}}
     {{#ionContent}}
       {{#ionList}}
         {{#each headlines}}
-          {{#ionItem}}
-            <h2>{{title}}</h2>
-            <p>{{askedAt}}</p>
+          {{#ionItem class="headline" href=path}}
+            <h2 class="headline-title">{{title}}</h2>
+            <p class="headline-asked-by">{{askedAt_TimeAgo}}</p>
           {{/ionItem}}
         {{/each}}
       {{/ionList}}
 
-      <button class="button icon-left ion-help-circled button-block button-positive button-ask-question" data-action="new-question">Ask a Question</button>
+      
+
+      <!-- <button class="button icon-left ion-help-circled button-block button-positive button-ask-question" data-action="new-question">Ask a Question</button> -->
 
     {{/ionContent}}
+
+
+    <div class="bar bar-footer bar-positive">
+      <button class="button button-full button-clear button-ask-question" data-action="new-question">Ask a Question</button>
+    </div>
+
   {{/ionView}}
 
+  </div>
 </template>

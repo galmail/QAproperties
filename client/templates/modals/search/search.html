@@ -1,6 +1,8 @@
 <template name="search">
+  <div class="search-modal">
   {{#ionModal focusFirstInput=true title="Search"}}
     <div class="list">
+      
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
           {{> ionIcon icon="ios-search" class="placeholder-icon"}}
@@ -8,13 +10,15 @@
         </label>
       </div>
       
+
       {{#each headlines}}
-        {{#ionItem}}
-          <h2>{{title}}</h2>
-          <p>{{askedAt}}</p>
+        {{#ionItem class="headline" href=path}}
+          <h2 class="headline-title">{{title}}</h2>
+          <p class="headline-asked-by">{{askedAt_TimeAgo}}</p>
         {{/ionItem}}
       {{/each}}
 
     </div>
   {{/ionModal}}
+  </div>
 </template>

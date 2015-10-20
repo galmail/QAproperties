@@ -9,17 +9,21 @@ Template.search.events({
   'keyup input': function (event, template) {
     Session.set('searchQuery', event.target.value);
   },
-  'click .item': function (event, template) {
-    if(event.target.placeholder || event.target.className=='item-input-inset' || event.target.className=='item-input-wrapper'){
-      // ignore the search...
-      return true;
-    }
-    Session.set('postId',this._id);
+  'click .headline': function (event, template) {
+    
+    // if(event.target.placeholder || event.target.className=='item-input-inset' || event.target.className=='item-input-wrapper'){
+    //   // ignore the search...
+    //   return true;
+    // }
     IonModal.close('search');
     Session.set('searchQuery','');
-    IonModal.open('post');
-    return false;
+    return true;
   }
+
+
+
+
+
 });
 
 Template.search.helpers({
