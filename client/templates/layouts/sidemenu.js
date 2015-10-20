@@ -36,7 +36,8 @@ Template.sidemenu.events({
             }
             else {
               delete(localStorage.firstTimeUser);
-              Router.go('/');
+              //Router.go('/');
+              window.location.href="/";
             }
           });
         }

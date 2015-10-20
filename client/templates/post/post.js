@@ -1,5 +1,6 @@
 Template.post.created = function () {
   this.autorun(function () {
+    this.postSubscription = Meteor.subscribe('viewTopic',{postId: Router.current().params._id});
     this.postSubscription = Meteor.subscribe('viewPost', Router.current().params._id);
     this.commentsSubscription = Meteor.subscribe('viewPostComments', Router.current().params._id);
   }.bind(this));
@@ -17,6 +18,13 @@ Template.post.rendered = function () {
 };
 
 Template.post.helpers({
+  topic: function(){
+    var post = Posts.findOne({_id: Router.current().params._id});
+    if(post==null) return 'Q&A';
+    var topic = Topics.findOne({_id: post.topicId});
+    if(topic==null) return 'Q&A';
+    return topic.name;
+  },
   numComments: function(){
     return Comments.find({postId: Router.current().params._id}).count();
   },

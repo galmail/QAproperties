@@ -6,8 +6,19 @@ Meteor.publish('topics', function() {
   return Topics.find();
 });
 
-Meteor.publish('viewTopic', function(topicId) {
-  return Topics.find({_id: topicId});
+Meteor.publish('viewTopic', function(options) {
+  var topic = null;
+  if(options.topicId){
+    return Topics.find({_id: options.topicId});
+  }
+  else if(options.postId){
+    var post = Posts.findOne({_id: options.postId});
+    if(post!=null)
+      return Topics.find({_id: post.topicId});
+  }
+  else {
+    return null;
+  }
 });
 
 Meteor.publish('headlines', function(topicId) {

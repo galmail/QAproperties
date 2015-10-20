@@ -1,7 +1,7 @@
 Template.headlines.created = function () {
   this.autorun(function () {
     this.headlinesSubscription = Meteor.subscribe('headlines',Router.current().params._id);
-    this.topicSubscription = Meteor.subscribe('viewTopic',Router.current().params._id);
+    this.topicSubscription = Meteor.subscribe('viewTopic',{topicId: Router.current().params._id});
   }.bind(this));
 };
 

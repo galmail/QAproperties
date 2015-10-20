@@ -28,8 +28,8 @@ Template.notifications.helpers({
 });
 
 Template.notifications.events({
-  'click .item': function(){
-    Router.go('/posts/'+this._id);
-  }
+  // 'click .item': function(){
+  //   Router.go('/posts/'+this._id);
+  // }
 });
 

@@ -3,13 +3,6 @@
 .post-view {
 
   .title {
-    // margin: .5em;
-    // font-size: 22px;
-    // line-height: 26px;
-    // font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    // font-weight: 700;
-
-
     font-family: "nimbus-sans";
     font-style: normal;
     font-size: 30px;
@@ -17,9 +10,8 @@
     letter-spacing: -2px;
     line-height: 1;
     margin: 0 .5em;
+    margin-top: .2em;
     padding: 10px 0 0;
-
-
   }
 
   .question,.answer {
@@ -36,12 +28,16 @@
 	////// Feedback //////
 
 	.feedback {
-    padding: 20px;
-    font-size: 20px;
-    text-align: center;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin-left: 1.3em;
+    margin-right: 2em;
 	}
 	.feedback-label {
-  	margin-right: 30px;
+    display: block;
+    float: left;
+    margin-top: 12px;
     font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 15px;
@@ -49,16 +45,23 @@
     color: #aaaaaa;
   }
   .feedback-thumbup {
-    margin-right: 20px;
-  	font-size: 26px;
+    display: block;
+    float: right;
+    margin-top: -9px;
+    margin-left: 8px;
+  	font-size: 20px;
+    color: gray;
   	&.selected {
-  		color: blue;
+  		color: lightgreen;
   	}
   }
   .feedback-thumbdown {
-    font-size: 26px;
+    display: block;
+    float: right;
+    font-size: 20px;
+    color: gray;
     &.selected {
-  		color: blue;
+  		color: lightcoral;
   	}
   }
 

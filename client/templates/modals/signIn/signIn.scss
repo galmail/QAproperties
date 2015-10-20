@@ -1,5 +1,7 @@
 // signIn.scss
 
+@import 'client/stylesheets/_app-variables';
+
 $color-twitter: #4099ff;
 $color-facebook: #3B5998;
 
@@ -8,15 +10,21 @@ $color-facebook: #3B5998;
     h2 {
         font-size: 38px;
         margin-top: 50%!important;
+        color: $lev-dark-green;
     }
 
     h3 {
         font-size: 16px;
         font-weight: 200;
+        color: gray;
     }
 
     .modal-backdrop {
         background-color: rgba(232, 234, 241, 0.97);
+    }
+
+    .modal {
+        background-color: #f8f8f8;
     }
 
 

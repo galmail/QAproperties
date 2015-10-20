@@ -15,10 +15,10 @@
       {{#if hasNotifications}}
         {{#ionList}}
           {{#each headlines}}
-            {{#ionItem}}
+            {{#ionItem href=path}}
               <h2>{{title}}</h2>
               <p>Question: {{question}}</p>
-              <p>Asked At: {{askedAt}}</p>
+              <p>Asked At: {{askedAt_TimeAgo}}</p>
               <p>Asked By: {{askedBy}}</p>
             {{/ionItem}}
           {{/each}}

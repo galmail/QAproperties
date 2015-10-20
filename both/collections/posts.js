@@ -1,25 +1,42 @@
 Posts = new Mongo.Collection('posts');
 
+///////////////// Utils /////////////////
+
+String.prototype.capitalize = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+RegExp.escape = function(s) {
+  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+
+
+///////////////// Utils End /////////////////
+
 Posts.before.insert(function (userId, post) {
   post.askedAt = new Date();
   post.askedBy = userId;
   post.upVotes = 0;
   post.downVotes = 0;
+  if(post.title) post.title = post.title.capitalize();
+  if(post.question) post.question = post.question.capitalize();
+  if(post.answer) post.answer = post.answer.capitalize();
+
   if(Meteor.isServer && !post.answer) Meteor.call("notifyAdmin",post._id);
 });
 
 Posts.before.update(function (userId, post) {
   post.updatedAt = new Date();
+  if(post.title) post.title = post.title.capitalize();
+  if(post.question) post.question = post.question.capitalize();
+  if(post.answer) post.answer = post.answer.capitalize();
+
   if(!post.answer){
     post.answeredAt = new Date();
     post.answeredBy = userId;
     if(Meteor.isServer) Meteor.call("notifyUser",post.askedBy,post._id);
   }
 });
-
-RegExp.escape = function(s) {
-  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-};
 
 Posts.search = function(query,topicId) {
   if (!query || !topicId) {
