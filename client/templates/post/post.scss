@@ -2,6 +2,36 @@
 
 .post-view {
 
+  .title {
+    // margin: .5em;
+    // font-size: 22px;
+    // line-height: 26px;
+    // font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    // font-weight: 700;
+
+
+    font-family: "nimbus-sans";
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 .5em;
+    padding: 10px 0 0;
+
+
+  }
+
+  .question,.answer {
+
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: .9em;
+  }
+
+
 
 	////// Feedback //////
 

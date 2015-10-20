@@ -174,14 +174,14 @@ Meteor.startup(function() {
 
   ///////////// Inserting Stuff /////////////
   
-  Topics.remove({});
+  //Topics.remove({});
   if (Topics.find({}).count() === 0) {
     _(topics).each(function (topic) {
       Topics.insert(topic);
     });
   }
 
-  Posts.remove({});
+  //Posts.remove({});
   if (Posts.find({}).count() === 0) {
     var randUser = Meteor.users.findOne();
     var randPic = 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg';

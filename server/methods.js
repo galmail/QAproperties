@@ -24,6 +24,7 @@ Meteor.methods({
 
   notifyUser: function(userId,postId,isComment){
     var user = Meteor.users.findOne({_id: userId});
+    if(user==null) return;
     console.log('sending push notification to user with userId: ' + user._id);
     var msg = "Someone answered your question!";
     if(isComment){

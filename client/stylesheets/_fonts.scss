@@ -1,6 +1,19 @@
 // fonts.scss
 
 @font-face {
+  font-family:'Georgia';
+  src: url('font/Georgia_gdi.eot');
+  src: url('font/Georgia_gdi.eot?#iefix') format('embedded-opentype'),
+    url('font/Georgia_gdi.woff') format('woff'),
+    url('font/Georgia_gdi.ttf') format('truetype'),
+    url('font/Georgia_gdi.svg#Georgia-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  //unicode-range: U+0020-F00E;
+}
+
+@font-face {
   // Note: this is an all-caps subset of Lora
   // It will appear incorrectly with lowercase characters
   font-family: 'lorabold';

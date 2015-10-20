@@ -20,17 +20,21 @@
       {{#ionView class="headlines-view"}}
         {{#ionContent}}
 
-        	<h2>{{title}}</h2>
+        	<h2 class="title">{{title}}</h2>
   	      <div class="question">{{question}}</div>
   	      
           {{#if answer}}
 
             <div class="answer">{{answer}}</div>
-    	      <div class="votes">
+    	      
+            <!--
+            <div class="votes">
     	      	<span>UPVOTES: {{upVotes}}</span>
     	      	<span>DOWNVOTES: {{downVotes}}</span>
     	      </div>
-    	    	<div class="feedback">
+            -->
+    	    	
+            <div class="feedback">
     	        <span class="feedback-label">Was it Useful?</span>	        
             	<a class="feedback-btn {{upVoted}} feedback-thumbup button button-icon icon ion-thumbsup"></a>
             	<a class="feedback-btn {{downVoted}} feedback-thumbdown button button-icon icon ion-thumbsdown"></a>

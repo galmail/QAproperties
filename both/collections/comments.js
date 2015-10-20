@@ -8,7 +8,7 @@ Comments.before.insert(function (userId, comment) {
     }
     else {
       var post = Posts.findOne({_id: comment.postId});
-      if(post.askedBy!=userId){
+      if(post.askedBy!=null && post.askedBy!=userId){
         Meteor.call("notifyUser",post.askedBy,post._id,true);
       }
     }
