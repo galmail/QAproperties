@@ -10,11 +10,11 @@
 //////////////// Global Styles ////////////////
 
 .logo {
-  background-image: url('http://placehold.it/200x200');
+  background-image: url('images/logo.png');
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 200px;
+  background-size: contain;
   height: 200px;
+  width: 250px;
   margin-left: auto;
   margin-right: auto;
 }

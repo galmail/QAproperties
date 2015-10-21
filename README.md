@@ -12,6 +12,8 @@ meteor
 
 ## To Deploy the app
 
+In mobile-config.js change Facebook APP Id to production
+
 ```
 meteor deploy qaproperties.meteor.com --settings private/settings.prod.json
 ```
@@ -31,11 +33,6 @@ meteor build iosbuild --server=qaproperties.meteor.com
 
 ## Pending Tasks
 
-- Style acceptPushNotifications like the signIn modal
-
-
-
-- Style terms modal
 - Style Welcome Screen
 - Change logo in app.scss
 - Enable Push in server/_settings.js
