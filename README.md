@@ -31,15 +31,15 @@ meteor build iosbuild --server=qaproperties.meteor.com
 
 ## Pending Tasks
 
-- Style notifications like the headlines...
 - Style acceptPushNotifications like the signIn modal
+
+
+
 - Style terms modal
 - Style Welcome Screen
-
-
 - Change logo in app.scss
 - Enable Push in server/_settings.js
-- Test Push Notifications Scenarios (fix bug when push repeat itself).
+
 
 Extras:
 

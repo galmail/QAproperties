@@ -15,8 +15,8 @@ Accounts.onCreateUser(function(options, user) {
     user.profile = { first_name: 'Guest' };
   }
   // setting user role
-  user.role = 'user';
-  if(Meteor.users.find({}).count()==0) user.role = 'admin';
+  if(user.role==null) user.role = 'user';
+  //if(Meteor.users.find({}).count()==0) user.role = 'admin';
   user.upVotedPosts = [];
   user.downVotedPosts = [];
   return user;

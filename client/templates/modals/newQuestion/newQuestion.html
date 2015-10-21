@@ -1,6 +1,6 @@
 <template name="newQuestion">
   {{#ionModal customTemplate=true}}
-    {{# autoForm collection="Posts" id="question-new-form" type="insert"}}
+    {{# autoForm collection="Posts" id="questionNewForm" type="insert"}}
       <div class="bar bar-header bar-stable">
         <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
         <h2 class="title">New Question</h2>
@@ -8,7 +8,7 @@
       </div>
       <div class="content has-header overflow-scroll">
         {{> afQuickField name="topicId" value=topicId }}
-        {{> afQuickField name="title" autofocus="true"}}
+        {{> afQuickField name="title" autofocus="true" rows=2}}
         {{> afQuickField name="question" rows=8}}
       </div>
     {{/autoForm}}

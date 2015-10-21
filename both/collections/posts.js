@@ -14,15 +14,16 @@ RegExp.escape = function(s) {
 ///////////////// Utils End /////////////////
 
 Posts.before.insert(function (userId, post) {
-  post.askedAt = new Date();
-  post.askedBy = userId;
+  if(post.askedAt==null) post.askedAt = new Date();
+  if(post.askedBy==null){
+    post.askedBy = userId;
+    post.askedByUsername = Meteor.user().profile.first_name;
+  }
   post.upVotes = 0;
   post.downVotes = 0;
   if(post.title) post.title = post.title.capitalize();
   if(post.question) post.question = post.question.capitalize();
   if(post.answer) post.answer = post.answer.capitalize();
-
-  if(Meteor.isServer && !post.answer) Meteor.call("notifyAdmin",post._id);
 });
 
 Posts.before.update(function (userId, post) {
@@ -34,7 +35,6 @@ Posts.before.update(function (userId, post) {
   if(!post.answer){
     post.answeredAt = new Date();
     post.answeredBy = userId;
-    if(Meteor.isServer) Meteor.call("notifyUser",post.askedBy,post._id);
   }
 });
 
@@ -97,7 +97,7 @@ Posts.getHeadlines = function(topicId) {
   },
   {
     sort: { askedAt: -1 },
-    fields: {title:1,askedAt:1}
+    fields: {title:1,askedAt:1,askedByUsername:1}
   });
 };
 
@@ -109,10 +109,6 @@ Posts.helpers({
   },
   askedAt_TimeAgo: function(){
     return moment(this.askedAt).fromNow();
-  },
-  askedByUser: function(){
-    if(this.askedBy)
-      return Meteor.users.find({_id: this.askedBy}).first_name;
   }
 
 });
@@ -150,6 +146,10 @@ Posts.attachSchema(new SimpleSchema({
     optional: true
   },
   askedBy: {
+    type: String,
+    optional: true
+  },
+  askedByUsername: {
     type: String,
     optional: true
   },

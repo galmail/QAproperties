@@ -1,9 +1,5 @@
 Meteor.startup(function() {
 
-  var randomDate = function(){
-    return new Date(new Date(2015, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2015, 0, 1).getTime()));
-  };
-
   var topics = [
     {
       name: 'Rent',
@@ -267,7 +263,7 @@ Meteor.startup(function() {
     },
     {
       topic: "Investor",
-      askedByUser: "",
+      askedByUser: "BlueBell Properties",
       title: "How much deposit do I need to invest in property?",
       answer: "At least £40,000 for first time buyers and £50,000 for those who already have a mortgage. If you have owned your own home for a few years, you will have built up quite a bit of equity in your property. You will have paid off some of the loan, and there's a good chance that your property has increased in value too. Instead of finding a cash deposit, your bank/lender (subject to approvals) will allow you to use the equity built up in your home as security on your investment property. Our independent mortgage broker will determine the best strategy for you and your investment plans."
     },
@@ -283,8 +279,91 @@ Meteor.startup(function() {
 
   ];
 
+  var users = [
+    {
+      emails: [{
+        address: 'galmail@gmail.com',
+        verified: true,
+        primary: true
+      }],
+      profile: {
+        accessToken: "CAAVFJsS8ltoBAFe1GZB8o9odGPZB4ETAhxd7qTYZAEeTkC4NdpkQ1QHZCN4Br6mRfbxXH9CtmdTbgP21HgnDWwUti1rbonSx0oWPnx8XCmWSfTpoN9Hg9ALh0TjzX6mZBcqVTmTudsbWK9b5iBlGPU6SZAMhZCOI2r6sik3TUyZA9gBSDwc4Aj8EPNZCdGJKWJ1XFWEYbLBLmRgZDZD",
+        age_range: { min: 21 },
+        email: "galmail@gmail.com",
+        expiresAt: 1450561402956,
+        first_name: "Gal",
+        gender: "male",
+        id: "10153722060493453",
+        last_name: "Dubitski",
+        link: "https://www.facebook.com/app_scoped_user_id/10153722060493453/",
+        locale: "en_US",
+        name: "Gal Dubitski"
+      },
+      services: {
+        facebook: {
+          email: "galmail@gmail.com"
+        }
+      },
+      role: "admin"
+    },
+    {
+      emails: [{
+        address: 'yourmove@qaproperties.meteor.com',
+        verified: true,
+        primary: true
+      }],
+      profile: {
+        name: 'Your Move',
+        first_name: 'Your Move'
+      },
+      services: {}
+    },
+    {
+      emails: [{
+        address: 'paulleeco@qaproperties.meteor.com',
+        verified: true,
+        primary: true
+      }],
+      profile: {
+        name: 'Paul Lee & Co.',
+        first_name: 'Paul Lee & Co.'
+      },
+      services: {}
+    },
+    {
+      emails: [{
+        address: 'bluebellproperties@qaproperties.meteor.com',
+        verified: true,
+        primary: true
+      }],
+      profile: {
+        name: 'BlueBell Properties',
+        first_name: 'BlueBell Properties'
+      },
+      services: {}
+    },
+    {
+      emails: [{
+        address: 'investopedia@qaproperties.meteor.com',
+        verified: true,
+        primary: true
+      }],
+      profile: {
+        name: 'Investopedia',
+        first_name: 'Investopedia'
+      },
+      services: {}
+    }
+  ];
+
   ///////////// Inserting Stuff /////////////
 
+  //Meteor.users.remove({});
+  if (Meteor.users.find({}).count() === 0) {
+    _(users).each(function (user) {
+      Meteor.users.insert(user);
+    });
+  }
 
   //Topics.remove({});
   if (Topics.find({}).count() === 0) {
@@ -295,13 +374,13 @@ Meteor.startup(function() {
 
   //Posts.remove({});
   if (Posts.find({}).count() === 0) {
-    var randUser = Meteor.users.findOne();
-    var randPic = 'http://pcimplements.com/koenigins/wp-content/uploads/2014/03/home.jpg';
     _(posts).each(function (post) {
+      var randomDate = new Date(new Date(2015, 0, 1).getTime() + Math.random() * (new Date().getTime() - new Date(2015, 0, 1).getTime()));
+      var user = Meteor.users.findOne({'profile.name': post.askedByUser});
       post.topicId = Topics.findOne({name: post.topic})._id;
-      post.askedAt = randomDate();
-      //post.askedBy = randUser._id;
-      post.pic = randPic;
+      post.askedAt = randomDate;
+      post.askedBy = user._id;
+      post.askedByUsername = user.profile.first_name;
       Posts.insert(post);
     });
   }

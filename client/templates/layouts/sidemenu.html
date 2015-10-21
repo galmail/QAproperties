@@ -35,9 +35,12 @@
 	    <a class="{{selectedPath 'about'}} item item-icon-left" data-ion-menu-close="" href="/about">
 	      <i class="icon ion-iphone"></i>About the App
 	    </a>
+	    {{#if user}}
 	    <a class="item item-icon-left" data-ion-menu-close="" data-action="signout">
 	      <i class="icon ion-android-exit"></i>Logout
 	    </a>
+	    {{/if}}
+
 	  </div>
 
   </div>

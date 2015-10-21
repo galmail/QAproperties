@@ -1,6 +1,6 @@
 // headlines.scss
 
-.headlines-view,.search-modal {
+.headlines-view,.search-modal,.notifications-view {
 
 	.headline {
   	display: block;
@@ -23,6 +23,7 @@
     font-weight: 700;
     white-space: normal;
     margin: 0 5px;
+    margin-bottom: 5px;
   }
 
   .headline-asked-by {

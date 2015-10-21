@@ -1,6 +1,6 @@
 Template.post.created = function () {
   this.autorun(function () {
-    this.postSubscription = Meteor.subscribe('viewTopic',{postId: Router.current().params._id});
+    this.topicSubscription = Meteor.subscribe('viewTopic',{postId: Router.current().params._id});
     this.postSubscription = Meteor.subscribe('viewPost', Router.current().params._id);
     this.commentsSubscription = Meteor.subscribe('viewPostComments', Router.current().params._id);
   }.bind(this));
@@ -8,11 +8,11 @@ Template.post.created = function () {
 
 Template.post.rendered = function () {
 	this.autorun(function () {
-    if (!this.postSubscription.ready() || !this.commentsSubscription.ready()) {
+    if (!this.topicSubscription.ready() || !this.postSubscription.ready() || !this.commentsSubscription.ready()) {
       IonLoading.show();
     } else {
       IonLoading.hide();
-      Meteor.call('markPostAsRead',Router.current().params._id); // mark post as read
+      Meteor.call('markPostAsRead',Meteor.userId(),Router.current().params._id); // mark post as read
     }
   }.bind(this));
 };
@@ -95,7 +95,7 @@ Template.post.events({
   },
 
   'click [data-action=share-post]': function (event, template) {
-    var msg = Posts.findOne({_id: Session.get('postId')}).title;
+    var msg = Posts.findOne({_id: Router.current().params._id}).title;
     var link = 'http://qaproperties.meteor.com/posts/' + Router.current().params._id;
     if(window.plugins && window.plugins.socialsharing){
       window.plugins.socialsharing.share(msg, null, null, link)

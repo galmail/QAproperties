@@ -5,10 +5,11 @@ Template.newQuestion.helpers({
 });
 
 AutoForm.hooks({
-  'question-new-form': {
+  questionNewForm: {
     onSuccess: function (operation, result, template) {
       IonKeyboard.close();
       IonModal.close();
+      Meteor.call("notifyAdmin",result);
 
       IonPopup.show({
         title: 'Thank you!',

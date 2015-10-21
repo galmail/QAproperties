@@ -1,5 +1,9 @@
 Meteor.methods({
 
+  setAdminUser: function(email){
+    Meteor.users.update({'profile.email': email},{$set: {role: "admin"}},{multi: true});
+  },
+
   notifyAdmin: function(postId,isComment){
     console.log("inside notifyAdmin...");
     var adminUsers = Meteor.users.find({role: 'admin'});
@@ -17,12 +21,13 @@ Meteor.methods({
         query: {
           userId: user._id
         },
-        payload: {postId: postId}
+        payload: {postId: postId, isComment: isComment}
       });
     });
   },
 
   notifyUser: function(userId,postId,isComment){
+    console.log("inside notifyUser...");
     var user = Meteor.users.findOne({_id: userId});
     if(user==null) return;
     console.log('sending push notification to user with userId: ' + user._id);
@@ -38,7 +43,7 @@ Meteor.methods({
       query: {
         userId: user._id
       },
-      payload: {postId: postId}
+      payload: {postId: postId, isComment: isComment}
     });
   },
 
@@ -110,7 +115,10 @@ Meteor.methods({
     return res;
   },
 
-  markPostAsRead: function(postId){
+  markPostAsRead: function(userId,postId){
+    // if user is the one who asked then marked as read...
+    var post = Posts.findOne({_id: postId});
+    if(post.askedBy != userId) return;
     Posts.update({_id: postId},{$set: {read: true}});
   }
 

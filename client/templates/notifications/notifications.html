@@ -1,5 +1,7 @@
 <template name="notifications">
 
+  <div class="notifications-view">
+
   {{#contentFor "headerButtonLeft"}}
     <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
       {{> ionIcon icon='navicon'}}
@@ -15,9 +17,9 @@
       {{#if hasNotifications}}
         {{#ionList}}
           {{#each headlines}}
-            {{#ionItem href=path}}
+            {{#ionItem class="headline" href=path}}
               <h2 class="headline-title">{{title}}</h2>
-              <p class="headline-asked-by">{{askedAt_TimeAgo}}{{#if askedBy}} by {{askedByUser}}{{/if}}</p>
+              <p class="headline-asked-by">{{askedAt_TimeAgo}}, by {{askedByUsername}}</p>
             {{/ionItem}}
           {{/each}}
         {{/ionList}}
@@ -29,5 +31,7 @@
       {{/if}}
     {{/ionContent}}
   {{/ionView}}
+
+  </div>
 
 </template>

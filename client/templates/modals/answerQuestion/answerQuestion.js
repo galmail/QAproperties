@@ -1,6 +1,6 @@
 Template.answerQuestion.created = function () {
   this.autorun(function () {
-    this.subscription = Meteor.subscribe('viewPost', Session.get('postId'));
+    this.subscription = Meteor.subscribe('viewPost', Router.current().params._id);
   }.bind(this));
 };
 
@@ -16,15 +16,17 @@ Template.answerQuestion.rendered = function () {
 
 Template.answerQuestion.helpers({
   currentPost: function(){
-    return Posts.findOne({_id: this.postId});
+    return Posts.findOne();
   }
 });
 
 AutoForm.hooks({
-  'answer-question-form': {
+  answerQuestionForm: {
     onSuccess: function (operation, result, template) {
       IonModal.close();
       IonKeyboard.close();
+      var post = Posts.findOne();
+      Meteor.call("notifyUser",post.askedBy,post._id);
     }
   }
 });

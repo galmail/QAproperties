@@ -1,14 +1,14 @@
 <template name="answerQuestion">
   {{#ionModal customTemplate=true}}
-    {{# autoForm collection="Posts" doc=currentPost id="answer-question-form" type="update"}}
+    {{# autoForm collection="Posts" doc=currentPost id="answerQuestionForm" type="update"}}
       <div class="bar bar-header bar-stable">
         <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
         <h2 class="title">Answer Question</h2>
         <button type="submit" class="button button-positive button-clear">Send</button>
       </div>
       <div class="content has-header overflow-scroll">
-        {{> afQuickField name="title" autofocus="" readonly=""}}
-        {{> afQuickField name="answer" rows=8}}
+        {{> afQuickField name="title" readonly="" rows=2}}
+        {{> afQuickField name="answer" autofocus="true" rows=8}}
       </div>
     {{/autoForm}}
   {{/ionModal}}

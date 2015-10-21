@@ -2,6 +2,18 @@
 
 .acceptPushNotifications-modal {
 
+	.modal {
+    background-color: #f8f8f8;
+  }
+
+  .message {
+  	font-size: 24px;
+    font-weight: 200;
+    color: gray;
+    line-height: 40px;
+    text-align: center;
+    padding-bottom: 80px;
+  }
 
 	.button.continue {
 		margin: 0;

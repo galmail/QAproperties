@@ -13,6 +13,7 @@ Template.notifications.rendered = function () {
         IonLoading.show();
       } else {
         IonLoading.hide();
+        Push.setBadge(0);
       }
 	  }.bind(this));
   }

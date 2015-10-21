@@ -1,10 +1,10 @@
 <template name="acceptPushNotifications">
-  {{#ionModal title="Push Notifications"}}
-    <div class="acceptPushNotifications-modal full-height">
+  <div class="acceptPushNotifications-modal">
+  {{#ionModal title=""}}
       
       <div class="row row-center full-height">
-      	<div class="col col-center">
-      		Would you like to receive push notifications whenever you get an answer ?
+      	<div class="col col-center message">
+          The app will send you push notifications whenever you get an answer or receive a message.
       	</div>
     	</div>
 
@@ -12,6 +12,6 @@
 			  <button class="button button-full button-clear continue">Continue</button>
 			</div>
 
-    </div>
   {{/ionModal}}
+  </div>
 </template>
