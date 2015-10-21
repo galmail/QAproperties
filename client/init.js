@@ -2,6 +2,24 @@ Meteor.startup(function () {
   
   AutoForm.setDefaultTemplate('ionic');
 
+  Avatar.setOptions({
+	  defaultImageUrl: "/images/user.png"
+	});
+
+	Avatar.setOptions({
+	  customImageProperty: function() {
+	  	if(this.profile.profile_image_url){
+	  		return this.profile.profile_image_url;
+	  	}
+	  	else if(this.profile.id){
+	  		return "https://graph.facebook.com/"+this.profile.id+"/picture/?type=large";
+	  	}
+	  	else {
+	  		return null;
+	  	}
+	  }
+	});
+
   if (Meteor.isCordova) {
 
   	Push.debug = true;
@@ -15,11 +33,12 @@ Meteor.startup(function () {
 			
 			if(notification.background){
 				// received notification in the background..
-				if(notification.payload && notification.payload.postId)
-					Router.go('/posts/' + notification.payload.postId);
-				else {
-					Router.go('/notifications');
-				}
+				// if(notification.payload && notification.payload.postId)
+				// 	Router.go('/posts/' + notification.payload.postId);
+				// else {
+				// 	Router.go('/notifications');
+				// }
+				Router.go('/notifications');
 			}
 			else {
 				// received notification in the foreground.. just alert the user.

@@ -109,6 +109,10 @@ Posts.helpers({
   },
   askedAt_TimeAgo: function(){
     return moment(this.askedAt).fromNow();
+  },
+  askedByUser: function(){
+    if(this.askedBy)
+      return Meteor.users.find({_id: this.askedBy}).first_name;
   }
 
 });

@@ -44,13 +44,11 @@ meteoric:autoform-ionic
 
 service-configuration
 accounts-twitter
-#accounts-facebook
-
-#accounts-ui
 mrt:accounts-facebook-cordova
 
 ## Others ##
 
+okgrow:analytics
 
 ###### Old Packages ######
 

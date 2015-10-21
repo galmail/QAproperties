@@ -16,10 +16,8 @@
         {{#ionList}}
           {{#each headlines}}
             {{#ionItem href=path}}
-              <h2>{{title}}</h2>
-              <p>Question: {{question}}</p>
-              <p>Asked At: {{askedAt_TimeAgo}}</p>
-              <p>Asked By: {{askedBy}}</p>
+              <h2 class="headline-title">{{title}}</h2>
+              <p class="headline-asked-by">{{askedAt_TimeAgo}}{{#if askedBy}} by {{askedByUser}}{{/if}}</p>
             {{/ionItem}}
           {{/each}}
         {{/ionList}}

@@ -29,7 +29,7 @@ Meteor.publish('headlines', function(topicId) {
   },
   {
     sort: { askedAt: -1 },
-    fields: {title:1,askedAt:1,topicId:1,answer:1}
+    fields: {title:1,askedAt:1,askedBy:1,topicId:1,answer:1}
   });
 });
 

@@ -6,6 +6,16 @@
 	"public": {
     "facebook": {
       "permissions": [ "public_profile", "email" ]
+    },
+    "analyticsSettings": {
+      "Google Analytics" : {"trackingId": "Your tracking ID"},
+      "GoSquared"        : {"siteToken": "Your site token (eg. GSN-123456-Y)"},
+      "Mixpanel"         : {"token":  "your token", "people": true},
+      "KISSmetrics"      : {"apiKey": "your api key"},
+      "UserVoice"        : {"apiKey": "your api key"},
+      "Sentry"           : {"config": "your config key"},
+      "Segment.io"       : {"apiKey": "your api key"},
+      "Keen IO"          : {"projectId": "your project id", "writeKey": "your write key"}
     }
   },
 	"twitter": {

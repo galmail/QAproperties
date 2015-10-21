@@ -31,16 +31,20 @@ meteor build iosbuild --server=qaproperties.meteor.com
 
 ## Pending Tasks
 
-- Finish the styles (change logo in app.scss)
-- Test Push Notifications Scenarios
+- Style notifications like the headlines...
+- Style acceptPushNotifications like the signIn modal
+- Style terms modal
+- Style Welcome Screen
 
+
+- Change logo in app.scss
+- Enable Push in server/_settings.js
+- Test Push Notifications Scenarios (fix bug when push repeat itself).
 
 Extras:
 
 - The Cartoon of the week Screen
 - Latest News Screen
-- Google Analytics
-- Mix Panel Analytics
 
 
 
