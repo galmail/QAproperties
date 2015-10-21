@@ -44,7 +44,10 @@ meteoric:autoform-ionic
 
 service-configuration
 accounts-twitter
-accounts-facebook
+#accounts-facebook
+
+#accounts-ui
+mrt:accounts-facebook-cordova
 
 ## Others ##
 

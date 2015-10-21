@@ -23,11 +23,17 @@ meteor add-platform ios
 meteor run ios-device --mobile-server qaproperties.meteor.com --settings private/settings.prod.json
 ```
 
+## To Submit to App Store
+
+```
+meteor build iosbuild --server=qaproperties.meteor.com
+```
+
 ## Pending Tasks
 
+- Finish the styles (change logo in app.scss)
+- Test Push Notifications Scenarios
 
-- Test Push Notifications Scenarios.
-- Finish the styles
 
 Extras:
 

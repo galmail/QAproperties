@@ -16,6 +16,13 @@ Template.sidemenu.helpers({
     var res = Posts.getNotifications(Meteor.userId()).count();
     if(res == 0) res = '';
     return res;
+  },
+  selectedPath: function(path){
+    var res = '';
+    if(Router.current().url.indexOf(path)>=0){
+      res = 'selected';
+    }
+    return res;
   }
 });
 

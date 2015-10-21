@@ -15,13 +15,13 @@
 	  {{/with}}
 
 	  <div class="list">
-	  	<a class="item item-icon-left" data-ion-menu-close="" href="/welcome">
+	  	<a class="{{selectedPath 'welcome'}} item item-icon-left" data-ion-menu-close="" href="/welcome">
 	      <i class="icon ion-flag"></i>Welcome
 	    </a>
-	    <a class="item item-icon-left" data-ion-menu-close="" href="/topics">
+	    <a class="{{selectedPath 'topics'}} item item-icon-left" data-ion-menu-close="" href="/topics">
 	      <i class="icon ion-ios-home"></i>Home
 	    </a>
-	    <a class="item item-icon-left" data-ion-menu-close="" href="/notifications">
+	    <a class="{{selectedPath 'notifications'}} item item-icon-left" data-ion-menu-close="" href="/notifications">
 	      <i class="icon ion-ios-bell"></i>
 	      Notifications
 	      <span class="badge badge-assertive">{{numNotifications}}</span>
@@ -32,7 +32,7 @@
 	    <!-- <a class="item item-icon-left" data-ion-menu-close="" href="/recent">
 	      <i class="icon ion-aperture"></i>Recent
 	    </a> -->
-	    <a class="item item-icon-left" data-ion-menu-close="" href="/about">
+	    <a class="{{selectedPath 'about'}} item item-icon-left" data-ion-menu-close="" href="/about">
 	      <i class="icon ion-iphone"></i>About the App
 	    </a>
 	    <a class="item item-icon-left" data-ion-menu-close="" data-action="signout">

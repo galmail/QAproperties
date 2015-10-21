@@ -41,6 +41,13 @@ App.launchScreens({
 
 App.setPreference('StatusBarOverlaysWebView', true);
 App.setPreference('StatusBarStyle', 'default');
+
 App.accessRule('*');
 App.accessRule('fb://*');
 App.accessRule('tw://*');
+
+App.configurePlugin('com.phonegap.plugins.facebookconnect', {
+  APP_ID: "1483407695320794",
+  APP_NAME: "Q&A Properties"
+});
+

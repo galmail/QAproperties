@@ -8,5 +8,8 @@ Topics.attachSchema(new SimpleSchema({
   },
   thumbnail: {
     type: String
+  },
+  position: {
+    type: Number
   }
 }));

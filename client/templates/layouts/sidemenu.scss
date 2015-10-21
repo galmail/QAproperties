@@ -11,4 +11,15 @@
 	  text-decoration: none;
 	}
 
+	.icon {
+		color: grey;
+	}
+
+	.selected {
+		background-color: aliceblue;
+		.icon {
+	    color: darkgreen;
+		}
+	}
+
 }

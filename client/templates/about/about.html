@@ -1,4 +1,5 @@
 <template name="about">
+  <div class="about-view">
 
   {{#contentFor "headerButtonLeft"}}
     <button class="button button-clear pull-left button-entering button-active" data-ion-menu-toggle="left">
@@ -12,9 +13,20 @@
   
   {{#ionView}}
     {{#ionContent}}
-      <div class="about-view">
-        This is the About View
+      
+      <div class="row row-center full-height">
+        <div class="col content-block">
+          <div class="logo"></div>
+          <div class="description">The place for the most complete questions and answers when renting, buying, selling or looking to invest in properties in the UK.</div>
+          <div class="sponsor">This app was created by <a href="http://levproperties.co.uk">Lev Properties</a></div>
+        </div>
       </div>
+
+      <div class="bar bar-footer">
+        <div class="version">App Version 1.0.0</div>
+      </div>
+      
     {{/ionContent}}
   {{/ionView}}
+  </div>
 </template>

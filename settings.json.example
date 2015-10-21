@@ -3,6 +3,11 @@
 		"appId": "<APP_ID_HERE>",
 		"secret" : "<SECRET_HERE>"
 	},
+	"public": {
+    "facebook": {
+      "permissions": [ "public_profile", "email" ]
+    }
+  },
 	"twitter": {
 		"consumerKey": "<APP_ID_HERE>",
 		"secret" : "<SECRET_HERE>"

@@ -7,45 +7,43 @@ $color-facebook: #3B5998;
 
 .signin-modal {
 
-    h2 {
-        font-size: 38px;
-        margin-top: 50%!important;
-        color: $lev-dark-green;
-    }
-
-    h3 {
-        font-size: 16px;
-        font-weight: 200;
-        color: gray;
-    }
-
-    .modal-backdrop {
-        background-color: rgba(232, 234, 241, 0.97);
-    }
-
     .modal {
         background-color: #f8f8f8;
     }
 
+    .content {
 
-    .button {
-        position: absolute;
-        left: 0;
-        right: 0;
-
-        &.ion-social-twitter {
-            bottom: 0;
-            margin: 0;
-            border-radius: 0;
-            background-color: $color-twitter;
-            border: none;
+        h2 {
+            font-size: 38px;
+            margin-top: 50%!important;
+            color: $lev-dark-green;
         }
-        &.ion-social-facebook {
-            bottom: 55px;
-            margin: 0;
-            border-radius: 0;
-            background-color: $color-facebook;
-            border: none;
+
+        h3 {
+            font-size: 16px;
+            font-weight: 200;
+            color: gray;
+        }
+
+        .button {
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            &.ion-social-twitter {
+                bottom: 0;
+                margin: 0;
+                border-radius: 0;
+                background-color: $color-twitter;
+                border: none;
+            }
+            &.ion-social-facebook {
+                bottom: 55px;
+                margin: 0;
+                border-radius: 0;
+                background-color: $color-facebook;
+                border: none;
+            }
         }
     }
 }
