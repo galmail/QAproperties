@@ -56,8 +56,6 @@ meteor build iosbuild --server=qaproperties.meteor.com
 ## Pending Tasks
 
 fix facebook login!
-when clicked on "Lev Properties", open up inside in-app browser.
-
 
 Extras:
 
