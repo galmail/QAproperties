@@ -9,11 +9,11 @@ Meteor.methods({
   },
 
   notifyAdmin: function(postId,comment){
-    console.log("inside notifyAdmin...");
     var adminUsers = Meteor.users.find({role: 'admin'});
+    console.log("inside notifyAdmin..");
     var msg = "Someone posted a question!";
     var nickname = "@guest";
-    if(Meteor.user()) nickname = Meteor.user().first_name;
+    if(Meteor.user()) nickname = Meteor.user().profile.first_name;
     if(comment){
       msg = nickname + ": " + comment.body;
     }
@@ -39,7 +39,7 @@ Meteor.methods({
     console.log('sending push notification to user with userId: ' + user._id);
     var msg = "Someone answered your question!";
     var nickname = "@guest";
-    if(Meteor.user()) nickname = Meteor.user().first_name;
+    if(Meteor.user()) nickname = Meteor.user().profile.first_name;
     if(comment){
       msg = nickname + ": " + comment.body;
     }
