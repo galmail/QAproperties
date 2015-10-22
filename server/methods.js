@@ -4,12 +4,14 @@ Meteor.methods({
     Meteor.users.update({'profile.email': email},{$set: {role: "admin"}},{multi: true});
   },
 
-  notifyAdmin: function(postId,isComment){
+  notifyAdmin: function(postId,comment){
     console.log("inside notifyAdmin...");
     var adminUsers = Meteor.users.find({role: 'admin'});
     var msg = "Someone posted a question!";
-    if(isComment){
-      msg = "Someone sent a comment!";
+    var nickname = "@guest";
+    if(Meteor.user()) nickname = Meteor.user().first_name;
+    if(comment){
+      msg = nickname + ": " + comment.body;
     }
     adminUsers.forEach(function(user){
       console.log('sending push notification to admin userId: ' + user._id);
@@ -26,14 +28,16 @@ Meteor.methods({
     });
   },
 
-  notifyUser: function(userId,postId,isComment){
+  notifyUser: function(userId,postId,comment){
     console.log("inside notifyUser...");
     var user = Meteor.users.findOne({_id: userId});
     if(user==null) return;
     console.log('sending push notification to user with userId: ' + user._id);
     var msg = "Someone answered your question!";
-    if(isComment){
-      msg = "Someone commented on your question!";
+    var nickname = "@guest";
+    if(Meteor.user()) nickname = Meteor.user().first_name;
+    if(comment){
+      msg = nickname + ": " + comment.body;
     }
     Push.send({
       from: 'QAproperties',

@@ -32,17 +32,17 @@ Meteor.startup(function() {
 
 	/////// Push Notifications ///////
 
-	// Push.Configure({
-	//   apn: {
-	//     passphrase: Meteor.settings.pushNotifications.apn.passphrase,
-	//     certData: Assets.getText(Meteor.settings.pushNotifications.apn.cert),
-	//     keyData: Assets.getText(Meteor.settings.pushNotifications.apn.key),
-	//   },
-	//   production: Meteor.settings.pushNotifications.production,
-	//   badge: Meteor.settings.pushNotifications.badge,
-	//   sound: Meteor.settings.pushNotifications.sound,
-	//   alert: Meteor.settings.pushNotifications.alert,
-	//   vibrate: Meteor.settings.pushNotifications.vibrate
-	// });
+	Push.Configure({
+	  apn: {
+	    passphrase: Meteor.settings.pushNotifications.apn.passphrase,
+	    certData: Assets.getText(Meteor.settings.pushNotifications.apn.cert),
+	    keyData: Assets.getText(Meteor.settings.pushNotifications.apn.key),
+	  },
+	  production: Meteor.settings.pushNotifications.production,
+	  badge: Meteor.settings.pushNotifications.badge,
+	  sound: Meteor.settings.pushNotifications.sound,
+	  alert: Meteor.settings.pushNotifications.alert,
+	  vibrate: Meteor.settings.pushNotifications.vibrate
+	});
 
 });

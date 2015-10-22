@@ -14,6 +14,28 @@ meteor
 
 In mobile-config.js change Facebook APP Id to production
 
+In XCode, build settings => Enable_Bitcode = NO
+
+In XCode .plist file
+
+<key>CFBundleURLTypes</key>
+<array>
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<string>fb1481888448806052</string>
+		</array>
+	</dict>
+</array>
+
+<key>LSApplicationQueriesSchemes</key>
+<array>
+	<string>fbauth</string>
+	<string>fbapi</string>
+	<string>fb1481888448806052</string>
+</array>
+
+
 ```
 meteor deploy qaproperties.meteor.com --settings private/settings.prod.json
 ```
@@ -33,9 +55,8 @@ meteor build iosbuild --server=qaproperties.meteor.com
 
 ## Pending Tasks
 
-- Style Welcome Screen
-- Change logo in app.scss
-- Enable Push in server/_settings.js
+fix facebook login!
+when clicked on "Lev Properties", open up inside in-app browser.
 
 
 Extras:

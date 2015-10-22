@@ -6,25 +6,34 @@ Template.welcome.rendered = function () {};
 
 Template.welcome.helpers({
 
-  opts: function() {
-    var opts ={
-      facebook: true,
-      twitter: true,
-      pinterest: false,
-      shareData: {
-        url: 'http://tocarta.com/',
-        text: 'this is a text'
-      }
-    };
-    return opts;
-  }
-
 });
 
 Template.welcome.events({
 
 	'click [data-action=view-terms]': function(){
 		IonModal.open('terms');
-	}
+	},
+
+  'click #facebook-login': function(event) {
+    Meteor.loginWithFacebook({}, function(err){
+      if (err) {
+        console.log(err);
+        throw new Meteor.Error("Facebook login failed");
+      } else {
+        Router.go('/topics');
+      }
+    });
+  },
+
+  'click #twitter-login': function(event) {
+    Meteor.loginWithTwitter({}, function(err){
+      if (err) {
+        console.log(err);
+        throw new Meteor.Error("Twitter login failed");
+      } else {
+        Router.go('/topics');
+      }
+    });
+  }
 
 });

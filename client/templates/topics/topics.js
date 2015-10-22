@@ -6,6 +6,11 @@ Template.topics.created = function () {
 
 Template.topics.rendered = function () {
   localStorage.setItem("firstTimeUser","no");
+
+  if(Meteor.isCordova && !Push.token && Meteor.user() && Meteor.user().role=="admin"){
+    IonModal.open('acceptPushNotifications');
+  }
+
   this.autorun(function () {
     if (!this.subscription.ready()) {
       IonLoading.show();

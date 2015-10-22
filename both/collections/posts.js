@@ -123,7 +123,13 @@ Posts.attachSchema(new SimpleSchema({
   },
   title: {
     type: String,
-    max: 140
+    max: 160,
+    autoform: {
+      label: 'Question',
+      rows: 5,
+      'label-type': 'placeholder',
+      placeholder: 'Type your question here…'
+    }
   },
   question: {
     type: String,
@@ -131,7 +137,13 @@ Posts.attachSchema(new SimpleSchema({
   },
   answer: {
     type: String,
-    optional: true
+    optional: true,
+    autoform: {
+      label: 'Answer',
+      rows: 10,
+      'label-type': 'placeholder',
+      placeholder: 'Type your answer here…'
+    }
   },
   pic: {
     type: String,

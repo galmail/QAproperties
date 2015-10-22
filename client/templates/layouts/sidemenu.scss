@@ -9,6 +9,15 @@
 	  text-align: center;
 	  padding: 24px;
 	  text-decoration: none;
+	  &.guest {
+	  	background: #f8f8f8;
+	  }
+	}
+
+	.logo {
+		width: 50vw;
+    height: inherit;
+    margin-top: 10px;
 	}
 
 	.icon {

@@ -45,6 +45,7 @@ meteoric:autoform-ionic
 service-configuration
 accounts-twitter
 mrt:accounts-facebook-cordova
+#btafel:accounts-facebook-cordova
 
 ## Others ##
 

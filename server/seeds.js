@@ -282,32 +282,6 @@ Meteor.startup(function() {
   var users = [
     {
       emails: [{
-        address: 'galmail@gmail.com',
-        verified: true,
-        primary: true
-      }],
-      profile: {
-        accessToken: "CAAVFJsS8ltoBAFe1GZB8o9odGPZB4ETAhxd7qTYZAEeTkC4NdpkQ1QHZCN4Br6mRfbxXH9CtmdTbgP21HgnDWwUti1rbonSx0oWPnx8XCmWSfTpoN9Hg9ALh0TjzX6mZBcqVTmTudsbWK9b5iBlGPU6SZAMhZCOI2r6sik3TUyZA9gBSDwc4Aj8EPNZCdGJKWJ1XFWEYbLBLmRgZDZD",
-        age_range: { min: 21 },
-        email: "galmail@gmail.com",
-        expiresAt: 1450561402956,
-        first_name: "Gal",
-        gender: "male",
-        id: "10153722060493453",
-        last_name: "Dubitski",
-        link: "https://www.facebook.com/app_scoped_user_id/10153722060493453/",
-        locale: "en_US",
-        name: "Gal Dubitski"
-      },
-      services: {
-        facebook: {
-          email: "galmail@gmail.com"
-        }
-      },
-      role: "admin"
-    },
-    {
-      emails: [{
         address: 'yourmove@qaproperties.meteor.com',
         verified: true,
         primary: true

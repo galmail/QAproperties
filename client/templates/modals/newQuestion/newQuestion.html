@@ -7,9 +7,8 @@
         <button type="submit" class="button button-positive button-clear">Send</button>
       </div>
       <div class="content has-header overflow-scroll">
+        {{> afQuickField name="title" autofocus='' rows=5}}
         {{> afQuickField name="topicId" value=topicId }}
-        {{> afQuickField name="title" autofocus="true" rows=2}}
-        {{> afQuickField name="question" rows=8}}
       </div>
     {{/autoForm}}
   {{/ionModal}}

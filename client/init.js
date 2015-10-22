@@ -1,6 +1,10 @@
 Meteor.startup(function () {
+
+	//////////// AutoForm ////////////
   
   AutoForm.setDefaultTemplate('ionic');
+
+  //////////// Avatar ////////////
 
   Avatar.setOptions({
 	  defaultImageUrl: "/images/user.png"
@@ -19,6 +23,33 @@ Meteor.startup(function () {
 	  	}
 	  }
 	});
+
+	//////////// Alert & Open Window ////////////
+
+	window.alert = function(msg){
+		IonPopup.show({
+      title: msg,
+      template: '',
+      buttons: [
+        {
+          text: '<b>Ok</b>',
+          type: 'button-positive',
+          onTap: function() {
+            IonPopup.close();
+            return true;
+          }
+        }
+      ]
+    });
+	};
+
+	if (Meteor.isCordova) {
+		window.open = function(link){
+			cordova.InAppBrowser.open(link, '_blank', 'location=yes');
+		};
+	}
+
+	//////////// Push Notifications ////////////
 
   if (Meteor.isCordova) {
 
@@ -47,7 +78,7 @@ Meteor.startup(function () {
 					Router.go('/posts/' + notification.payload.postId);
 				}
 				else {
-					alert('You have received a new message. Check out your notifications.');
+					alert('You have received a message! Check out your notifications.');
 				}
 			}
 
