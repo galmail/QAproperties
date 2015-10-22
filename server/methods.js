@@ -1,5 +1,9 @@
 Meteor.methods({
 
+  removeQuestion: function(postId){
+    if(Meteor.user().role=="admin") Posts.remove({_id: postId});
+  },
+
   setAdminUser: function(email){
     Meteor.users.update({'profile.email': email},{$set: {role: "admin"}},{multi: true});
   },

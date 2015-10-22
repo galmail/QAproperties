@@ -50,12 +50,11 @@ meteor run ios-device --mobile-server qaproperties.meteor.com --settings private
 ## To Submit to App Store
 
 ```
-meteor build iosbuild --server=qaproperties.meteor.com
+meteor build iosbuild --server qaproperties.meteor.com --mobile-settings private/settings.prod.json
 ```
 
 ## Pending Tasks
 
-fix facebook login!
 
 Extras:
 
