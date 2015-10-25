@@ -40,6 +40,13 @@ In XCode .plist file
 meteor deploy qaproperties.meteor.com --settings private/settings.prod.json
 ```
 
+## Cordova Plugins Installed
+
+com.phonegap.plugins.facebookconnect@https://github.com/Wizcorp/phonegap-facebook-plugin/tarball/0e61babb65bc1716b957b6294c7fdef3ce6ace79
+cordova-plugin-inappbrowser@1.0.1
+cordova-plugin-x-socialsharing@5.0.4
+
+
 ## To Test on iPhone
 
 ```
@@ -55,6 +62,8 @@ meteor build iosbuild --server qaproperties.meteor.com --mobile-settings private
 
 ## Pending Tasks
 
+login facebook/twitter
+push notifications
 
 Extras:
 

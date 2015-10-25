@@ -4,6 +4,7 @@ Accounts.onCreateUser(function(options, user) {
   // setting user profile
   if(user.services && user.services.facebook){
     user.profile = user.services.facebook;
+    user.profile.first_name = user.services.facebook.first_name;
   }
   else if(user.services && user.services.twitter){
     user.profile = user.services.twitter;

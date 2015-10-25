@@ -14,7 +14,7 @@ Meteor.methods({
     var msg = "Someone posted a question!";
     var nickname = "@guest";
     if(Meteor.user()) nickname = Meteor.user().profile.first_name;
-    if(comment){
+    if(comment!=null){
       msg = nickname + ": " + comment.body;
     }
     adminUsers.forEach(function(user){
@@ -27,7 +27,7 @@ Meteor.methods({
         query: {
           userId: user._id
         },
-        payload: {postId: postId, isComment: isComment}
+        payload: {postId: postId, isComment: (comment!=null)}
       });
     });
   },
@@ -40,7 +40,7 @@ Meteor.methods({
     var msg = "Someone answered your question!";
     var nickname = "@guest";
     if(Meteor.user()) nickname = Meteor.user().profile.first_name;
-    if(comment){
+    if(comment!=null){
       msg = nickname + ": " + comment.body;
     }
     Push.send({
@@ -51,7 +51,7 @@ Meteor.methods({
       query: {
         userId: user._id
       },
-      payload: {postId: postId, isComment: isComment}
+      payload: {postId: postId, isComment: (comment!=null)}
     });
   },
 

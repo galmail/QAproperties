@@ -15,7 +15,9 @@ Template.welcome.events({
 	},
 
   'click #facebook-login': function(event) {
+    IonLoading.show();
     Meteor.loginWithFacebook({}, function(err){
+      IonLoading.hide();
       if (err) {
         console.log(err);
         throw new Meteor.Error("Facebook login failed");
@@ -26,7 +28,9 @@ Template.welcome.events({
   },
 
   'click #twitter-login': function(event) {
+    IonLoading.show();
     Meteor.loginWithTwitter({}, function(err){
+      IonLoading.hide();
       if (err) {
         console.log(err);
         throw new Meteor.Error("Twitter login failed");
