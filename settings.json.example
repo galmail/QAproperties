@@ -1,4 +1,10 @@
 {
+	"loggly": {
+		"production": false,
+		"token": "<APP_TOKEN>",
+		"username": "<APP_USERNAME>",
+		"password": "<APP_PASSWORD>"
+	},
 	"facebook": {
 		"appId": "<APP_ID_HERE>",
 		"secret" : "<SECRET_HERE>"
@@ -26,7 +32,8 @@
 	  "apn": {
 	    "passphrase": "<PASSPHRASE>",  
 	    "key": "<PushKey.pem>",
-	    "cert": "<PushCert.pem>"
+	    "cert": "<PushCert.pem>",
+	    "gateway": "gateway.sandbox.push.apple.com"
 	  },  
 	  "gcm": {
 	    "apiKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",

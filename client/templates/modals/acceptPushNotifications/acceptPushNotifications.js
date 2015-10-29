@@ -6,18 +6,14 @@ Template.acceptPushNotifications.events({
 
 	'click .button.continue': function(){
 		var self = this;
-		
 		IonLoading.show();
-
 		Push.Configure({});
-
-		Push.addListener('token', function(token) {
-			console.log('got token',token);
+		Meteor.setTimeout(function(){
 			IonLoading.hide();
-			alert('Push-Notifications Configured!');
+			//alert('Push-Notifications Configured!');
 		  IonModal.close('acceptPushNotifications');
 		  if(self.callback) self.callback();
-		});
+		},5000);
 	}
 
 });

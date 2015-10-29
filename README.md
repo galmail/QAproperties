@@ -27,12 +27,10 @@ In XCode .plist file
 		</array>
 	</dict>
 </array>
-
 <key>LSApplicationQueriesSchemes</key>
 <array>
 	<string>fbauth</string>
 	<string>fbapi</string>
-	<string>fb1481888448806052</string>
 </array>
 
 
@@ -43,9 +41,9 @@ meteor deploy qaproperties.meteor.com --settings private/settings.prod.json
 ## Cordova Plugins Installed
 
 com.phonegap.plugins.facebookconnect@https://github.com/Wizcorp/phonegap-facebook-plugin/tarball/0e61babb65bc1716b957b6294c7fdef3ce6ace79
+cordova-plugin-app-version@0.1.7
 cordova-plugin-inappbrowser@1.0.1
 cordova-plugin-x-socialsharing@5.0.4
-
 
 ## To Test on iPhone
 
@@ -62,8 +60,12 @@ meteor build iosbuild --server qaproperties.meteor.com --mobile-settings private
 
 ## Pending Tasks
 
-login facebook/twitter
-push notifications
+auto-reload app after 8 seconds...
+push notifications (don't ask everytime to send pushes...)
+
+Debug in server the collection: Push.appCollection
+
+
 
 Extras:
 

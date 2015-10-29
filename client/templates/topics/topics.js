@@ -7,8 +7,8 @@ Template.topics.created = function () {
 Template.topics.rendered = function () {
   localStorage.setItem("firstTimeUser","no");
 
-  if(Meteor.isCordova && !Push.token && Meteor.user() && Meteor.user().role=="admin"){
-    IonModal.open('acceptPushNotifications');
+  if(!localStorage.getItem("pushEnabled") && Meteor.user().role=="admin"){
+    Push.Configure({});
   }
 
   this.autorun(function () {

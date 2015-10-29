@@ -24,19 +24,19 @@ App.launchScreens({
   'iphone5': 'resources/splash/iphone5.png',
   'iphone6': 'resources/splash/iphone6.png',
   'iphone6p_portrait': 'resources/splash/iphone6p_portrait.png',
-  'iphone6p_landscape': 'resources/splash/iphone6p_landscape.png',
+  //'iphone6p_landscape': 'resources/splash/iphone6p_landscape.png',
   'ipad_portrait': 'resources/splash/ipad_portrait.png',
   'ipad_portrait_2x': 'resources/splash/ipad_portrait_2x.png',
-  'ipad_landscape': 'resources/splash/ipad_landscape.png',
-  'ipad_landscape_2x': 'resources/splash/ipad_landscape_2x.png',
+  //'ipad_landscape': 'resources/splash/ipad_landscape.png',
+  //'ipad_landscape_2x': 'resources/splash/ipad_landscape_2x.png',
   'android_ldpi_portrait': 'resources/splash/android_ldpi_portrait.png',
-  'android_ldpi_landscape': 'resources/splash/android_ldpi_landscape.png',
+  //'android_ldpi_landscape': 'resources/splash/android_ldpi_landscape.png',
   'android_mdpi_portrait': 'resources/splash/android_mdpi_portrait.png',
-  'android_mdpi_landscape': 'resources/splash/android_mdpi_landscape.png',
+  //'android_mdpi_landscape': 'resources/splash/android_mdpi_landscape.png',
   'android_hdpi_portrait': 'resources/splash/android_hdpi_portrait.png',
-  'android_hdpi_landscape': 'resources/splash/android_hdpi_landscape.png',
-  'android_xhdpi_portrait': 'resources/splash/android_xhdpi_portrait.png',
-  'android_xhdpi_landscape': 'resources/splash/android_xhdpi_landscape.png'
+  //'android_hdpi_landscape': 'resources/splash/android_hdpi_landscape.png',
+  'android_xhdpi_portrait': 'resources/splash/android_xhdpi_portrait.png'
+  //'android_xhdpi_landscape': 'resources/splash/android_xhdpi_landscape.png'
 });
 
 App.setPreference('StatusBarOverlaysWebView', true);
@@ -45,8 +45,8 @@ App.setPreference('Orientation', 'portrait');
 //App.setPreference('Orientation', 'all', 'ios');
 
 App.accessRule('*');
-App.accessRule('fb://*');
-App.accessRule('tw://*');
+//App.accessRule('fb://*');
+//App.accessRule('tw://*');
 
 App.configurePlugin('com.phonegap.plugins.facebookconnect', {
   APP_ID: "1481888448806052",

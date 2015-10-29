@@ -22,9 +22,11 @@
         </div>
       </div>
 
+      {{#if version}}
       <div class="bar bar-footer">
-        <div class="version">App Version 1.0.0</div>
+        <div class="version">App Version {{version}}</div>
       </div>
+      {{/if}}
       
     {{/ionContent}}
   {{/ionView}}

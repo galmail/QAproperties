@@ -55,12 +55,14 @@ Meteor.startup(function () {
 
   	//Push.debug = true;
 
+  	Push.addListener('token', function(token) {
+			console.log('got token',token);
+			localStorage.setItem("pushEnabled","yes");
+		});
+
   	Push.addListener('message', function(notification) {
 			// Called on every message
 			//console.log('received msg',notification);
-
-			// SCENARIO 1: someone ask a question, the admin gets a notification, when clicked, he can see the question (post) and answer it.
-			// SCENARIO 2: the admin answer a question, the user gets a push notification, when clicked, he can see the answer (post)
 			
 			if(notification.background){
 				// received notification in the background..
@@ -83,6 +85,21 @@ Meteor.startup(function () {
 			}
 
 		});
+
+
+		if(localStorage.getItem("pushEnabled")=="yes"){
+  		Push.Configure({});
+  	}
+
+
+
+
+
+
+
+
+
+
 
   }
 
